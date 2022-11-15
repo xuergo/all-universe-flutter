@@ -32,14 +32,20 @@ dependencies:
   flutter:
     sdk: flutter
 
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
+  # 图标库
   cupertino_icons: ^1.0.2 
+  # 强大的状态管理、路由
   get: ^4.6.5
+  # 加载刷新组件
   easy_refresh: ^3.0.4+3
-  rive: ^0.9.0
+  # 播放lottie格式动画(刷新组件用)
   lottie: ^1.4.3
+  # 响应式单位
+  flutter_screenutil: ^5.6.0
+  # 网络请求
+  dio: ^4.0.6
+  # loading 组件
+  flutter_easyloading: ^3.0.3
 
 dev_dependencies:
   flutter_test:
@@ -70,6 +76,7 @@ flutter:
    - lib/assets/lottie/
    - lib/assets/images/toolbar/
    - lib/assets/lottie/lottie_list_pull_refresh.json
+   - lib/assets/images/player/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

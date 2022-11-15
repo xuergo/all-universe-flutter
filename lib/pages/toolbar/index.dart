@@ -1,3 +1,4 @@
+import 'package:all_univers/components/layout/header_bg/index.dart';
 import 'package:all_univers/pages/test_page/index.dart';
 import 'package:flutter/material.dart';
 import 'package:all_univers/pages/home/index.dart';
@@ -19,15 +20,7 @@ class _ToolbarState extends State<Toolbar> {
     return Scaffold(
       body: Stack(
         children: [
-          Container(
-            height: 200,
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('lib/assets/images/app_bg.webp'),
-                fit: BoxFit.fitWidth,
-              ),
-            ),
-          ),
+          const HeaderBg(),
           PageView(
             controller: _pageController,
             physics: const NeverScrollableScrollPhysics(),
@@ -37,7 +30,7 @@ class _ToolbarState extends State<Toolbar> {
                 title: '11',
               ),
             ],
-          )
+          ),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

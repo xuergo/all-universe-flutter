@@ -1,4 +1,6 @@
+import 'package:all_univers/http/api.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 void main() => runApp(MyApp());
 
@@ -33,8 +35,6 @@ class _MyHomePageState extends State<TestPage> {
       backgroundColor: Colors.transparent, //把scaffold的背景色改成透明
       body: Center(
         child: AnimatedOpacity(
-          // If the Widget should be visible, animate to 1.0 (fully visible).
-          // If the Widget should be hidden, animate to 0.0 (invisible).
           opacity: _visible ? 1.0 : 0.0,
           duration: Duration(milliseconds: 500),
           // The green box needs to be the child of the AnimatedOpacity
@@ -46,9 +46,16 @@ class _MyHomePageState extends State<TestPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Make sure to call setState. This tells Flutter to rebuild the
-          // UI with the changes.
+        onPressed: () async {
+          // 验证通过提交数据
+          EasyLoading.show();
+          var res = await Api.login({
+            'email': 'admin',
+            'password': '123456',
+          });
+          // 保存登录令牌
+          print(res['data']['token']);
+          EasyLoading.dismiss();
           setState(() {
             _visible = !_visible;
           });
