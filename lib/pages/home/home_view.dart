@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:all_universe_flutter/components/components.dart';
-import 'package:all_universe_flutter/components/custom_scaffold.dart';
 import 'package:all_universe_flutter/pages/home/home_controller.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
@@ -23,7 +22,7 @@ class HomePage extends GetView<HomeController> {
             Obx(() => Center(child: Text(controller.count.toString()))),
             TextButton(
                 onPressed: () => controller.increment(),
-                child: Text('count++')),
+                child: Text('count111+')),
             GetBuilder<HomeController>(builder: (_) {
               return Text(controller.userName);
             }),

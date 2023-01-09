@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter With GetX',
+      title: '小宇宙',
       home: IndexPage(),
       initialBinding: IndexBinding(),
       debugShowCheckedModeBanner: false,
