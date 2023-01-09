@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_template/global.dart';
-import 'package:flutter_getx_template/pages/Index/Index_controller.dart';
-import 'package:flutter_getx_template/pages/home/home_view.dart';
-import 'package:flutter_getx_template/pages/login/login_view.dart';
-import 'package:flutter_getx_template/pages/splash/spalsh_view.dart';
+import 'package:all_universe_flutter/global.dart';
+import 'package:all_universe_flutter/pages/Index/Index_controller.dart';
+import 'package:all_universe_flutter/pages/home/home_view.dart';
+import 'package:all_universe_flutter/pages/login/login_view.dart';
+import 'package:all_universe_flutter/pages/splash/spalsh_view.dart';
 import 'package:get/get.dart';
 
 class IndexPage extends GetView<IndexController> {

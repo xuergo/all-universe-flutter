@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_template/components/components.dart';
-import 'package:flutter_getx_template/components/custom_scaffold.dart';
-import 'package:flutter_getx_template/pages/home/home_controller.dart';
+import 'package:all_universe_flutter/components/components.dart';
+import 'package:all_universe_flutter/components/custom_scaffold.dart';
+import 'package:all_universe_flutter/pages/home/home_controller.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
@@ -21,11 +21,15 @@ class HomePage extends GetView<HomeController> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Obx(() => Center(child: Text(controller.count.toString()))),
-            TextButton(onPressed: () => controller.increment(), child: Text('count++')),
+            TextButton(
+                onPressed: () => controller.increment(),
+                child: Text('count++')),
             GetBuilder<HomeController>(builder: (_) {
               return Text(controller.userName);
             }),
-            TextButton(onPressed: () => controller.changeUserName(), child: Text('changeName')),
+            TextButton(
+                onPressed: () => controller.changeUserName(),
+                child: Text('changeName')),
           ],
         ),
       ),

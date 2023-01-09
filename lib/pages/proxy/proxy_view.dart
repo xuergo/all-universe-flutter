@@ -3,8 +3,8 @@ import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:flutter_getx_template/components/components.dart';
-import 'package:flutter_getx_template/utils/utils.dart';
+import 'package:all_universe_flutter/components/components.dart';
+import 'package:all_universe_flutter/utils/utils.dart';
 
 class ProxyPage extends StatelessWidget {
   ProxyPage({Key? key}) : super(key: key);
@@ -40,7 +40,8 @@ class ProxyPage extends StatelessWidget {
               margin: EdgeInsets.symmetric(vertical: 30),
               width: getDeviceWidth(context) - 60,
               height: 50,
-              child: TextButton(child: Text('设置代理'), onPressed: () => setupProxy()),
+              child: TextButton(
+                  child: Text('设置代理'), onPressed: () => setupProxy()),
             )
           ],
         ),
@@ -62,13 +63,15 @@ class ProxyPage extends StatelessWidget {
     }
     Dio dio = Request().dio;
     // 在调试模式下需要抓包调试，所以我们使用代理，并禁用HTTPS证书校验
-    (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate = (client) {
+    (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
+        (client) {
       client.findProxy = (uri) {
         print('走了代理----$ip:$port');
         return "PROXY $ip:$port";
       };
       //代理工具会提供一个抓包的自签名证书，会通不过证书校验，所以我们禁用证书校验
-      client.badCertificateCallback = (X509Certificate cert, String host, int port) => true;
+      client.badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
     };
     EasyLoading.showToast('代理设置成功');
   }

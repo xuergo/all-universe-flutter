@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_template/pages/login/login_controller.dart';
-import 'package:flutter_getx_template/router/app_pages.dart';
+import 'package:all_universe_flutter/pages/login/login_controller.dart';
+import 'package:all_universe_flutter/router/app_pages.dart';
 import 'package:get/get.dart';
 
 class LoginPage extends GetView<LoginController> {

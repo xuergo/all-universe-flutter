@@ -1,10 +1,10 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_getx_template/common/values/values.dart';
-import 'package:flutter_getx_template/pages/login/login_model.dart';
-import 'package:flutter_getx_template/utils/local_storage.dart';
-import 'package:flutter_getx_template/utils/utils.dart';
+import 'package:all_universe_flutter/common/values/values.dart';
+import 'package:all_universe_flutter/pages/login/login_model.dart';
+import 'package:all_universe_flutter/utils/local_storage.dart';
+import 'package:all_universe_flutter/utils/utils.dart';
 
 /// 全局配置
 class Global {
@@ -57,7 +57,8 @@ class Global {
 
     // android 状态栏为透明的沉浸
     if (Platform.isAndroid) {
-      SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+      SystemUiOverlayStyle systemUiOverlayStyle =
+          SystemUiOverlayStyle(statusBarColor: Colors.transparent);
       SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
     }
   }
@@ -65,6 +66,7 @@ class Global {
   // 持久化 用户信息
   static Future<bool> saveProfile(UserLoginResponseModel userResponse) {
     profile = userResponse;
-    return LoacalStorage().setJSON(STORAGE_USER_PROFILE_KEY, userResponse.toJson());
+    return LoacalStorage()
+        .setJSON(STORAGE_USER_PROFILE_KEY, userResponse.toJson());
   }
 }

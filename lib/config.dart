@@ -1,4 +1,4 @@
-import 'package:flutter_getx_template/env.dart';
+import 'package:all_universe_flutter/env.dart';
 
 // 开发环境
 const SERVER_HOST_DEV = 'http://192.168.3.21:30366';

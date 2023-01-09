@@ -3,9 +3,9 @@ import 'package:dio/dio.dart';
 import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio_cookie_manager/dio_cookie_manager.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:flutter_getx_template/config.dart';
-import 'package:flutter_getx_template/global.dart';
-import 'package:flutter_getx_template/utils/utils.dart';
+import 'package:all_universe_flutter/config.dart';
+import 'package:all_universe_flutter/global.dart';
+import 'package:all_universe_flutter/utils/utils.dart';
 
 /*
   * http 操作类
@@ -90,7 +90,10 @@ class Request {
     if (_authorization.isNotEmpty) {
       requestOptions = requestOptions.copyWith(headers: _authorization);
     }
-    var response = await dio.get(path, queryParameters: params, options: requestOptions, cancelToken: cancelToken);
+    var response = await dio.get(path,
+        queryParameters: params,
+        options: requestOptions,
+        cancelToken: cancelToken);
     return response.data;
   }
 
@@ -101,7 +104,8 @@ class Request {
     if (_authorization.isNotEmpty) {
       requestOptions = requestOptions.copyWith(headers: _authorization);
     }
-    var response = await dio.post(path, data: params, options: requestOptions, cancelToken: cancelToken);
+    var response = await dio.post(path,
+        data: params, options: requestOptions, cancelToken: cancelToken);
     return response.data;
   }
 
@@ -112,7 +116,8 @@ class Request {
     if (_authorization.isNotEmpty) {
       requestOptions = requestOptions.copyWith(headers: _authorization);
     }
-    var response = await dio.put(path, data: params, options: requestOptions, cancelToken: cancelToken);
+    var response = await dio.put(path,
+        data: params, options: requestOptions, cancelToken: cancelToken);
     return response.data;
   }
 
@@ -125,7 +130,8 @@ class Request {
       requestOptions = requestOptions.copyWith(headers: _authorization);
     }
 
-    var response = await dio.patch(path, data: params, options: requestOptions, cancelToken: cancelToken);
+    var response = await dio.patch(path,
+        data: params, options: requestOptions, cancelToken: cancelToken);
 
     return response.data;
   }
@@ -138,7 +144,8 @@ class Request {
     if (_authorization.isNotEmpty) {
       requestOptions = requestOptions.copyWith(headers: _authorization);
     }
-    var response = await dio.delete(path, data: params, options: requestOptions, cancelToken: cancelToken);
+    var response = await dio.delete(path,
+        data: params, options: requestOptions, cancelToken: cancelToken);
     return response.data;
   }
 
@@ -150,8 +157,10 @@ class Request {
     if (_authorization.isNotEmpty) {
       requestOptions = requestOptions.copyWith(headers: _authorization);
     }
-    var response =
-        await dio.post(path, data: FormData.fromMap(params), options: requestOptions, cancelToken: cancelToken);
+    var response = await dio.post(path,
+        data: FormData.fromMap(params),
+        options: requestOptions,
+        cancelToken: cancelToken);
     return response.data;
   }
 
@@ -187,17 +196,23 @@ class Request {
             switch (errCode) {
               case 400:
                 {
-                  return ErrorEntity(code: errCode, message: error.response?.data['message'] ?? "请求语法错误");
+                  return ErrorEntity(
+                      code: errCode,
+                      message: error.response?.data['message'] ?? "请求语法错误");
                 }
 
               case 401:
                 {
-                  return ErrorEntity(code: errCode, message: error.response?.data['message'] ?? "没有权限");
+                  return ErrorEntity(
+                      code: errCode,
+                      message: error.response?.data['message'] ?? "没有权限");
                 }
 
               case 403:
                 {
-                  return ErrorEntity(code: errCode, message: error.response?.data['message'] ?? "服务器拒绝执行");
+                  return ErrorEntity(
+                      code: errCode,
+                      message: error.response?.data['message'] ?? "服务器拒绝执行");
                 }
               case 404:
                 {
@@ -205,7 +220,9 @@ class Request {
                 }
               case 405:
                 {
-                  return ErrorEntity(code: errCode, message: error.response?.data['message'] ?? "请求方法被禁止");
+                  return ErrorEntity(
+                      code: errCode,
+                      message: error.response?.data['message'] ?? "请求方法被禁止");
                 }
               case 500:
                 {
@@ -217,15 +234,21 @@ class Request {
                 }
               case 503:
                 {
-                  return ErrorEntity(code: errCode, message: error.response?.data['message'] ?? "服务器挂了");
+                  return ErrorEntity(
+                      code: errCode,
+                      message: error.response?.data['message'] ?? "服务器挂了");
                 }
               case 505:
                 {
-                  return ErrorEntity(code: errCode, message: error.response?.data['message'] ?? "不支持HTTP协议请求");
+                  return ErrorEntity(
+                      code: errCode,
+                      message:
+                          error.response?.data['message'] ?? "不支持HTTP协议请求");
                 }
               default:
                 {
-                  return ErrorEntity(code: errCode, message: error.response?.data['message']);
+                  return ErrorEntity(
+                      code: errCode, message: error.response?.data['message']);
                 }
             }
           } on Exception catch (_) {

@@ -1,4 +1,4 @@
-import 'package:flutter_getx_template/pages/home/home_controller.dart';
+import 'package:all_universe_flutter/pages/home/home_controller.dart';
 import 'package:get/get.dart';
 
 class HomeBinding extends Bindings {

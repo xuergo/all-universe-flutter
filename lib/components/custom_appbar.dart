@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_template/common/colors/colors.dart';
+import 'package:all_universe_flutter/common/colors/colors.dart';
 
 /// appbar 返回按钮类型
 enum AppBarBackType { Back, Close, None }
@@ -57,11 +57,13 @@ class AppBarBack extends StatelessWidget {
       },
       child: _backType == AppBarBackType.Close
           ? Container(
-              child: Icon(Icons.close, color: color ?? Color(0xFF222222), size: 24.0),
+              child: Icon(Icons.close,
+                  color: color ?? Color(0xFF222222), size: 24.0),
             )
           : Container(
               padding: EdgeInsets.only(right: 15),
-              child: Icon(Icons.arrow_back_ios_new, size: 24.0, color: Color(0xFF222222)),
+              child: Icon(Icons.arrow_back_ios_new,
+                  size: 24.0, color: Color(0xFF222222)),
             ),
     );
   }
@@ -75,6 +77,10 @@ class MyTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(_title, style: TextStyle(color: color ?? Color(0xFF222222), fontSize: 18, fontWeight: FontWeight.w500));
+    return Text(_title,
+        style: TextStyle(
+            color: color ?? Color(0xFF222222),
+            fontSize: 18,
+            fontWeight: FontWeight.w500));
   }
 }
