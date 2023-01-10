@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 
 class IndexController extends GetxController {
   // 是否展示欢迎页
-  var isloadWelcomePage = true.obs;
+  var isloadWelcomePage = false.obs;
 
   @override
   void onInit() {
