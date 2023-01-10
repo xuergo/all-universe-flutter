@@ -4,7 +4,8 @@ abstract class AppRoutes {
   static const Index = '/index';
   static const Home = '/home';
   static const Login = '/login';
-  static const Toolbar = '/toolbar';
+  //tabbar页
+  static const Tabbar = '/tabbar';
   // notfound
   static const NotFound = '/notfound';
 

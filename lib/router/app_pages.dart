@@ -5,8 +5,7 @@ import 'package:all_universe_flutter/pages/login/login_binding.dart';
 import 'package:all_universe_flutter/pages/login/login_view.dart';
 import 'package:all_universe_flutter/pages/notfound/notfound_view.dart';
 import 'package:all_universe_flutter/pages/proxy/proxy_view.dart';
-import 'package:all_universe_flutter/pages/toolbar/Index_view.dart';
-import 'package:all_universe_flutter/pages/toolbar/index_binding.dart';
+import 'package:all_universe_flutter/pages/tabbar/tabbar.dart';
 import 'package:get/get.dart';
 part 'app_routes.dart';
 
@@ -29,9 +28,8 @@ class AppPages {
       binding: HomeBinding(),
     ),
     GetPage(
-      name: AppRoutes.Toolbar,
-      page: () => ToolbarPage(),
-      binding: ToolbarBinding(),
+      name: AppRoutes.Tabbar,
+      page: () => TabbarPage(),
     ),
   ];
 
