@@ -10,13 +10,45 @@ class PlayController extends GetxController {
 
   @override
   void onInit() async {
-    state.playData = await getDetails();
+    // await Future.delayed(Duration(seconds: 10));
+
+    /// 获取缓存数据
+
+    super.onInit();
+  }
+
+  @override
+  void onReady() {}
+
+  @override
+  void onClose() {
+    state.player.pause();
+    state.player.dispose();
+  }
+
+  /// 播放
+  void play(data) async {
+    /// 继续播放
+    if (state.playData != null && data.id == state.playData?.id) {
+      state.player.play();
+      return;
+    }
+
+    /// 切换歌曲
+    await state.player.stop();
+    await state.player.dispose();
 
     state.player = AudioPlayer();
-    await state.player.setUrl(state.playData.url);
+    state.playData = await getDetails({'id': data.id});
+    update();
+    await state.player
+        .setAudioSource(AudioSource.uri(Uri.parse(state.playData!.url)));
+    state.player.play();
 
     /// 时间转换系数
     getTimeGini();
+
+    update();
 
     /// 监听播放器播放进度
     state.player.positionStream.listen(
@@ -46,30 +78,6 @@ class PlayController extends GetxController {
         update();
       },
     );
-
-    super.onInit();
-  }
-
-  @override
-  void onReady() {}
-
-  @override
-  void onClose() {
-    state.player.pause();
-    state.player.dispose();
-  }
-
-  /// 初始化数据
-  getData() async {
-    state.playData = await getDetails();
-    update();
-  }
-
-  /// 获取时间转换系数
-  getTimeGini() {
-    final duration = state.player.duration;
-    final totalSeconds = duration!.inSeconds;
-    state.timeGini = 1 / totalSeconds;
   }
 
   /// 拖动进度条
@@ -87,5 +95,12 @@ class PlayController extends GetxController {
   /// 后退
   void back() async {
     await state.player.seek(state.player.position + Duration(seconds: -15));
+  }
+
+  /// 获取时间转换系数
+  getTimeGini() {
+    final duration = state.player.duration;
+    final totalSeconds = duration!.inSeconds;
+    state.timeGini = 1 / totalSeconds;
   }
 }

@@ -131,7 +131,7 @@ class TreasureHunt extends StatelessWidget {
   /// 单个内容
   Widget _buildContentItem(PodcastModel item) {
     return GestureDetector(
-      onTap: () => Get.toNamed('/details'),
+      onTap: () => Get.toNamed('/details', arguments: {'data': item}),
       child: Container(
         width: 150.w,
         color: Colors.transparent,

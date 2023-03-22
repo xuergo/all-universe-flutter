@@ -30,7 +30,9 @@ class EditSelection extends StatelessWidget {
           itemBuilder: (context, index) {
             return EditSelectionItem(
               data: editSelectionList[index],
-              ontap: (data) => Get.toNamed("/details"),
+              ontap: (data) {
+                Get.toNamed('/details', arguments: {'data': data});
+              },
             );
           },
         ),

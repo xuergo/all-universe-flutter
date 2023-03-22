@@ -155,7 +155,7 @@ class Hot extends StatelessWidget {
 
   Widget _contenterBoxItem(PodcastModel data, int index) {
     return GestureDetector(
-      onTap: () => Get.toNamed('/details'),
+      onTap: () => Get.toNamed('/details', arguments: {'data': data}),
       child: Container(
         color: Colors.transparent,
         child: Row(

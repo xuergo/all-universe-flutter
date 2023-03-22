@@ -88,7 +88,7 @@ flutter:
    - lib/assets/images/tabbar/
    - lib/assets/lottie/lottie_list_pull_refresh.json
    - lib/assets/images/player/
-   - lib/assets/images/common/
+   - lib/assets/images/common/ 
    - lib/assets/images/home/
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -46,7 +46,7 @@ class TaLike extends StatelessWidget {
 
   Widget _buildLikeItem(PodcastModel item) {
     return GestureDetector(
-      onTap: () => Get.toNamed('/details'),
+      onTap: () => Get.toNamed('/details', arguments: {'data': item}),
       child: Container(
         width: 290.w,
         padding: EdgeInsets.all(15.w),

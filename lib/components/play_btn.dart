@@ -1,5 +1,7 @@
 /// 播放按钮
 
+import 'dart:math';
+
 import 'package:all_universe_flutter/common/colors/colors.dart';
 import 'package:all_universe_flutter/pages/play/play_controller.dart';
 import 'package:all_universe_flutter/utils/common.dart';
@@ -23,8 +25,9 @@ class PlayBtn extends StatelessWidget {
 
   final controller = Get.find<PlayController>();
   final state = Get.find<PlayController>().state;
-
+  final PlayState = Get.find<PlayController>().state;
   late final Color color;
+
   @override
   Widget build(BuildContext context) {
     if (data.color != null && isShowDataColor) {
@@ -40,16 +43,18 @@ class PlayBtn extends StatelessWidget {
             toPlayPage();
           }
         },
-        child: _playerButton(),
+        child: PlayState.processingState == ProcessingState.idle
+            ? _playBtn()
+            : _playerButtons(),
       ),
     );
   }
 
   // 播放按钮样式
-  Widget _playerButton() {
+  Widget _playerButtons() {
     final processingState = state.processingState;
 
-    if (data.id != state.playData.id) {
+    if (data.id != state.playData!.id) {
       return _playBtn();
     } else if (processingState == ProcessingState.loading ||
         processingState == ProcessingState.buffering) {
@@ -65,7 +70,7 @@ class PlayBtn extends StatelessWidget {
 
   Widget _playBtn() {
     return GestureDetector(
-      onTap: () => state.player.play(),
+      onTap: () => controller.play(data),
       child: Container(
         padding: EdgeInsets.all(4.w),
         decoration: BoxDecoration(

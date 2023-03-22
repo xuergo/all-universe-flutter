@@ -5,7 +5,7 @@ import 'package:all_universe_flutter/pages/notfound/notfound_view.dart';
 import 'package:all_universe_flutter/pages/play/play_view.dart';
 import 'package:all_universe_flutter/pages/proxy/proxy_view.dart';
 import 'package:all_universe_flutter/pages/subscription/subscription_view.dart';
-import 'package:all_universe_flutter/pages/tabbar/tabbar.dart';
+import 'package:all_universe_flutter/pages/tabbar/tabbar_view.dart';
 import 'package:get/get.dart';
 part 'app_routes.dart';
 

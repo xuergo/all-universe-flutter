@@ -7,13 +7,9 @@ import 'package:all_universe_flutter/pages/Index/index_binding.dart';
 import 'package:all_universe_flutter/router/app_pages.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:all_universe_flutter/pages/play/play_controller.dart';
 
-void main() => Global.init().then((e) {
+void main() => Global.init().then((e) async {
       runApp(MyApp());
-
-      /// 全局唯一播放器Controller
-      Get.put(PlayController());
     });
 
 class MyApp extends StatelessWidget {

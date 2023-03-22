@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:all_universe_flutter/model/podcast_detail.dart';
 import 'package:all_universe_flutter/pages/details/details_state.dart';
 import 'package:all_universe_flutter/services/services.dart';
 import 'package:get/get.dart';
@@ -18,7 +19,8 @@ class DetailsController extends GetxController {
       }
       update();
     });
-    state.details = await getDetails();
+    dynamic params = Get.arguments;
+    state.details = await getDetails({'id': params['data'].id});
     state.list = await getRandomPodcastList({'pageSize': '5'});
     state.isLoading = false;
     update();

@@ -17,7 +17,6 @@ class TabbarController extends GetxController {
   void onClose() {}
 
   void changeTabbar(int value) {
-    state.selectIndex = value;
-    update();
+    state.selectIndex.value = value;
   }
 }

@@ -50,12 +50,15 @@ class Request {
 
     // 添加拦截器
     dio.interceptors.add(InterceptorsWrapper(onRequest: (options, handler) {
+      EasyLoading.show(status: 'loading...');
       // 在请求被发送之前做一些预处理
       return handler.next(options); //continue
     }, onResponse: (response, handler) {
+      EasyLoading.dismiss();
       // 在返回响应数据之前做一些预处理
       return handler.next(response);
     }, onError: (DioError e, handler) {
+      EasyLoading.dismiss();
       // 当请求失败时做一些预处理
       ErrorEntity eInfo = createErrorEntity(e);
       // 错误提示

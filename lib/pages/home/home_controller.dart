@@ -67,8 +67,4 @@ class HomeController extends GetxController {
     state.treasureHuntList = getRandomArrayElements(allList, 3);
     state.taLikeList = getRandomArrayElements(allList, 3);
   }
-
-  toDetails() {
-    Get.toNamed('/details');
-  }
 }

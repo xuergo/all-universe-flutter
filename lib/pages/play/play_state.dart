@@ -3,8 +3,9 @@ import 'package:all_universe_flutter/pages/play/widgets/play_progress.dart';
 import 'package:just_audio/just_audio.dart';
 
 class PlayState {
-  late AudioPlayer player;
-  late ProcessingState processingState = ProcessingState.loading;
+  /// 播放器
+  AudioPlayer player = AudioPlayer();
+  ProcessingState processingState = ProcessingState.idle;
 
   /// 剩余时间
   String time = '00:00';
@@ -18,6 +19,6 @@ class PlayState {
   final ProgressBarController progressController = ProgressBarController();
 
   /// 播放对象
-  late PodcastDetail playData;
+  PodcastDetail? playData;
   PlayState() {}
 }

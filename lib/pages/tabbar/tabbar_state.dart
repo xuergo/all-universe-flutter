@@ -1,10 +1,11 @@
 import 'package:all_universe_flutter/pages/home/home_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../test/test_screen.dart';
 
 class TabbarState {
-  int selectIndex = 0;
+  RxInt selectIndex = 0.obs;
 
   final screens = [
     HomePage(),

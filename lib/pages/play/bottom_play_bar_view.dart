@@ -5,6 +5,7 @@ import 'package:all_universe_flutter/utils/common.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:just_audio/just_audio.dart';
 
 /// 底部播放栏
 class BottomPlayBarPage extends GetView<PlayController> {
@@ -32,7 +33,7 @@ class BottomPlayBarPage extends GetView<PlayController> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(5.r),
                   child: Image.network(
-                    state.playData.cover,
+                    state.playData!.cover,
                     height: 44.h,
                     width: 44.h,
                     fit: BoxFit.cover,
@@ -47,7 +48,7 @@ class BottomPlayBarPage extends GetView<PlayController> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        state.playData.title,
+                        state.playData!.title,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(

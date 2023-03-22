@@ -13,9 +13,9 @@ Future<List<PodcastModel>> getRandomPodcastList(
 }
 
 /// 详情
-Future<PodcastDetail> getDetails({
-  Map? params,
-}) async {
+Future<PodcastDetail> getDetails(
+  Map<String, int>? params,
+) async {
   final response = await Request().get('/details', params: params);
   final data = PodcastDetail.fromJson(response.data);
   return data;

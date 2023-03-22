@@ -16,7 +16,7 @@ class PodcastItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Get.toNamed('/details'),
+      onTap: () => Get.toNamed('/details', arguments: {'data': data}),
       child: Container(
         height: 90.r,
         color: Colors.transparent,

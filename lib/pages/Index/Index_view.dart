@@ -1,5 +1,5 @@
 import 'package:all_universe_flutter/pages/splash/spalsh_view.dart';
-import 'package:all_universe_flutter/pages/tabbar/tabbar.dart';
+import 'package:all_universe_flutter/pages/tabbar/tabbar_view.dart';
 import 'package:flutter/material.dart';
 import 'package:all_universe_flutter/global.dart';
 import 'package:all_universe_flutter/pages/Index/Index_controller.dart';

@@ -156,10 +156,7 @@ class PlayPage extends StatelessWidget {
           width: 280.w,
           height: 280.w,
           child: MyCachedNetworkImage(
-            imageurl: state.playData.cover,
-          ),
-          decoration: BoxDecoration(
-            color: Colors.amber,
+            imageurl: state.playData!.cover,
           ),
         ),
       ),
@@ -171,7 +168,7 @@ class PlayPage extends StatelessWidget {
     return Center(
       child: Container(
         child: Text(
-          state.playData.title,
+          state.playData!.title,
           textAlign: TextAlign.center,
           style: TextStyle(
             color: Colors.white,
@@ -188,7 +185,7 @@ class PlayPage extends StatelessWidget {
     return Center(
       child: Container(
         child: Text(
-          state.playData.name,
+          state.playData!.name,
           textAlign: TextAlign.center,
           style: TextStyle(
             color: AppColors.primaryGreenText,
