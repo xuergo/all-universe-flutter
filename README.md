@@ -33,6 +33,7 @@
 <img src="screenshots/sc4.png" alt="Gallery Image" width="30%" />
 <img src="screenshots/sc5.png" alt="Gallery Image" width="30%" />
 <img src="screenshots/sc6.png" alt="Gallery Image" width="30%" />
+<img src="screenshots/sc7.png" alt="Gallery Image" width="30%" />
 </p>
 
 ## 🌻学习参考  

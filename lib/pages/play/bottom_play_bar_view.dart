@@ -1,11 +1,11 @@
 import 'package:all_universe_flutter/common/colors/colors.dart';
 import 'package:all_universe_flutter/components/play_btn.dart';
 import 'package:all_universe_flutter/pages/play/play_controller.dart';
+import 'package:all_universe_flutter/pages/play/widgets/play_list_btn.dart';
 import 'package:all_universe_flutter/utils/common.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:just_audio/just_audio.dart';
 
 /// 底部播放栏
 class BottomPlayBarPage extends GetView<PlayController> {
@@ -73,18 +73,7 @@ class BottomPlayBarPage extends GetView<PlayController> {
                 SizedBox(width: 10.w),
                 PlayBtn(data: state.playData),
                 SizedBox(width: 10.w),
-                Container(
-                  padding: EdgeInsets.all(10.w),
-                  child: Icon(
-                    Icons.line_style_rounded,
-                    size: 20.w,
-                    color: AppColors.primaryColor,
-                  ),
-                  decoration: BoxDecoration(
-                    color: AppColors.primaryColor.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(100),
-                  ),
-                ),
+                PlayListBtn()
               ],
             ),
             decoration: BoxDecoration(

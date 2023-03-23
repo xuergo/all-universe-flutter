@@ -23,7 +23,7 @@ class PlayPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<PlayController>(
       builder: (_) => Scaffold(
-        body: InkWell(
+        body: GestureDetector(
             child: Container(
           width: getDeviceWidth(context),
           height: getDeviceHeight(context),
@@ -56,7 +56,7 @@ class PlayPage extends StatelessWidget {
               Spacer(),
 
               /// 底部按钮
-              _buildBottom(),
+              _buildBottom(context),
               Icon(
                 Icons.keyboard_arrow_up_sharp,
                 color: AppColors.primaryGreyText,
@@ -286,7 +286,8 @@ class PlayPage extends StatelessWidget {
   // 播放按钮样式
   Widget _playerButton() {
     final processingState = state.processingState;
-    if (processingState == ProcessingState.loading ||
+    if (processingState == ProcessingState.idle ||
+        processingState == ProcessingState.loading ||
         processingState == ProcessingState.buffering) {
       // 2
       return Container(
@@ -324,7 +325,7 @@ class PlayPage extends StatelessWidget {
   }
 
   /// 底部按钮
-  Widget _buildBottom() {
+  Widget _buildBottom(context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10.w),
       child: Row(
@@ -341,22 +342,25 @@ class PlayPage extends StatelessWidget {
               color: Colors.white.withOpacity(.2),
               borderRadius: BorderRadius.all(Radius.circular(6.r)),
             ),
-            child: Row(
-              children: [
-                Icon(
-                  Icons.list_rounded,
-                  size: 15.w,
-                  color: AppColors.primaryGreyText,
-                ),
-                SizedBox(width: 5.w),
-                Text(
-                  '待播列表',
-                  style: TextStyle(
+            child: GestureDetector(
+              onTap: () => toPlayListPage(context),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.line_style_rounded,
+                    size: 15.w,
                     color: AppColors.primaryGreyText,
-                    fontSize: 15.sp,
                   ),
-                ),
-              ],
+                  SizedBox(width: 5.w),
+                  Text(
+                    '待播列表',
+                    style: TextStyle(
+                      color: AppColors.primaryGreyText,
+                      fontSize: 15.sp,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           Container(

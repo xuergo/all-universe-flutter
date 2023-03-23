@@ -12,7 +12,7 @@ double getDeviceWidth(BuildContext context) {
   return MediaQuery.of(context).size.width;
 }
 
-/// 设备顶部状态栏宽度
+/// 设备顶部状态栏高度
 double getDeviceTopHeight() {
   return MediaQueryData.fromWindow(window).padding.top;
 }

@@ -1,9 +1,11 @@
 // 分组数组
 import 'dart:ui';
 
+import 'package:all_universe_flutter/pages/play/play_list_view.dart';
 import 'package:all_universe_flutter/pages/play/play_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 List<List<T>> getSplitList<T>(List<T> list, int len) {
   if (len <= 1) {
@@ -40,5 +42,16 @@ void toPlayPage() {
     exitBottomSheetDuration: const Duration(milliseconds: 200),
     enableDrag: true,
     isScrollControlled: true,
+  );
+}
+
+/// 跳转播放列表
+void toPlayListPage(BuildContext context) {
+  showBarModalBottomSheet(
+    expand: true,
+    context: context,
+    topControl: SizedBox(),
+    backgroundColor: Colors.white,
+    builder: (context) => PlayListPage(),
   );
 }

@@ -54,9 +54,10 @@ class PlayBtn extends StatelessWidget {
   Widget _playerButtons() {
     final processingState = state.processingState;
 
-    if (data.id != state.playData!.id) {
+    if (data.id != state.playData?.id) {
       return _playBtn();
-    } else if (processingState == ProcessingState.loading ||
+    } else if (processingState == ProcessingState.idle ||
+        processingState == ProcessingState.loading ||
         processingState == ProcessingState.buffering) {
       return _loadingBtn();
     } else if (state.player.playing != true) {
@@ -74,13 +75,22 @@ class PlayBtn extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(4.w),
         decoration: BoxDecoration(
-          color: color.withOpacity(0.1),
+          color: data.id == state.playData?.id
+              ? Colors.white
+              : color.withOpacity(0.1),
           borderRadius: BorderRadius.all(Radius.circular(100.r)),
+          border: Border.all(
+            color: data.id == state.playData?.id
+                ? AppColors.primaryGreyBackground
+                : color.withOpacity(0), // 设置边框颜色为红色
+            width: 4.0.w, // 设置边框宽度为 2 像素
+            style: BorderStyle.solid, // 使用实线样式
+          ),
         ),
         child: Icon(
           Icons.play_arrow_rounded,
           size: size != null ? size : 28.w,
-          color: color,
+          color: data.id == state.playData?.id ? Colors.black : color,
         ),
       ),
     );
@@ -92,13 +102,22 @@ class PlayBtn extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(4.w),
         decoration: BoxDecoration(
-          color: color.withOpacity(0.1),
+          color: data.id == state.playData?.id
+              ? Colors.white
+              : color.withOpacity(0.1),
           borderRadius: BorderRadius.all(Radius.circular(100.r)),
+          border: Border.all(
+            color: data.id == state.playData?.id
+                ? AppColors.primaryGreyBackground
+                : color.withOpacity(0), // 设置边框颜色为红色
+            width: 4.0.w, // 设置边框宽度为 2 像素
+            style: BorderStyle.solid, // 使用实线样式
+          ),
         ),
         child: Icon(
           Icons.pause_rounded,
           size: size != null ? size : 28.w,
-          color: color,
+          color: data.id == state.playData?.id ? Colors.black : color,
         ),
       ),
     );

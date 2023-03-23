@@ -198,7 +198,7 @@ class LoginPage extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(4.r)),
         ),
         child: Text(
-          '登录',
+          '登录 😁',
           style: TextStyle(
             color: Colors.white,
             fontSize: 18.sp,

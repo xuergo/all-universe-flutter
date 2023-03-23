@@ -1,4 +1,3 @@
-import 'package:all_universe_flutter/model/podcast_detail.dart';
 import 'package:all_universe_flutter/pages/play/widgets/play_progress.dart';
 import 'package:just_audio/just_audio.dart';
 
@@ -19,6 +18,20 @@ class PlayState {
   final ProgressBarController progressController = ProgressBarController();
 
   /// 播放对象
-  PodcastDetail? playData;
+  dynamic playData;
+
+  /// 播放列表显示用
+  List<dynamic> playViewList = [];
+
+  /// 播放列表 -  播放器用
+  ConcatenatingAudioSource playList = ConcatenatingAudioSource(
+    // 播放下个音频之前加载
+    useLazyPreparation: true,
+    // 定义切换算法
+    shuffleOrder: DefaultShuffleOrder(),
+    // 指定播放列表项目
+    children: [],
+  );
+
   PlayState() {}
 }

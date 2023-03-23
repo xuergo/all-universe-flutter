@@ -4,6 +4,7 @@ import 'dart:developer';
 import 'package:all_universe_flutter/pages/login/login_state.dart';
 import 'package:all_universe_flutter/router/app_pages.dart';
 import 'package:all_universe_flutter/services/services.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 
 class LoginController extends GetxController {
@@ -85,8 +86,10 @@ class LoginController extends GetxController {
         "phone": state.phoneController.text,
         "passWord": state.codeController.text,
       };
+      EasyLoading.show(status: 'loading...');
       await UserAPI.login(params: data);
       state.timer?.cancel();
+      EasyLoading.dismiss();
       Get.toNamed(AppRoutes.Tabbar);
     } catch (e) {
       log('$e');
