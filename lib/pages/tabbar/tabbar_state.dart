@@ -1,16 +1,16 @@
 import 'package:all_universe_flutter/pages/home/home_view.dart';
+import 'package:all_universe_flutter/pages/personal/personal_view.dart';
+import 'package:all_universe_flutter/pages/subscription/subscription_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../test/test_screen.dart';
 
 class TabbarState {
   RxInt selectIndex = 0.obs;
 
   final screens = [
     HomePage(),
-    const TestScreen(title: '订阅'),
-    const TestScreen(title: '个人'),
+    SubscriptionPage(),
+    PersonalPage(),
   ];
 
   static Image generateIcon(String path) {

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:all_universe_flutter/common/colors/colors.dart';
 import 'package:all_universe_flutter/components/components.dart';
 import 'package:all_universe_flutter/components/custom_loading.dart';

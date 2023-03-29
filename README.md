@@ -14,6 +14,8 @@
 - ✅首页
 - ✅播放页面 (可播放) 
 - ✅详情页面
+- ✅订阅页面
+- ✅个人页面（头像可拖动）
 - ❌开屏页面
 - ❌其他页（都是无脑滚键盘了，和上面页面差距不大，看请况吧😂😂😂）
 - ❌10个Star⭐（2/10）
@@ -34,6 +36,8 @@
 <img src="screenshots/sc5.png" alt="Gallery Image" width="30%" />
 <img src="screenshots/sc6.png" alt="Gallery Image" width="30%" />
 <img src="screenshots/sc7.png" alt="Gallery Image" width="30%" />
+<img src="screenshots/sc8.png" alt="Gallery Image" width="30%" />
+<img src="screenshots/sc9.png" alt="Gallery Image" width="30%" />
 </p>
 
 ## 🌻学习参考  

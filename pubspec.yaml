@@ -67,6 +67,9 @@ dependencies:
 
   #底部弹框
   modal_bottom_sheet: ^3.0.0-pre
+
+  #震动
+  vibration: ^1.7.6
   
 dev_dependencies:
   flutter_test:

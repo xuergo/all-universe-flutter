@@ -629,6 +629,14 @@ packages:
       url: "http://mirrors.cnnic.cn/dart-pub/"
     source: hosted
     version: "2.1.4"
+  vibration:
+    dependency: "direct main"
+    description:
+      name: vibration
+      sha256: "1dc9d1a0d62b12f1276eb7146b21585db5fe01771b8ca0234fefdf74ba51f963"
+      url: "http://mirrors.cnnic.cn/dart-pub/"
+    source: hosted
+    version: "1.7.6"
   webview_flutter:
     dependency: "direct main"
     description:
@@ -679,4 +687,4 @@ packages:
     version: "1.0.0"
 sdks:
   dart: ">=2.18.2 <3.0.0"
-  flutter: ">=3.3.0"
+  flutter: ">=3.7.0"
