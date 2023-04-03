@@ -35,6 +35,7 @@
 <img src="screenshots/sc4.png" alt="Gallery Image" width="30%" />
 <img src="screenshots/sc5.png" alt="Gallery Image" width="30%" />
 <img src="screenshots/sc6.png" alt="Gallery Image" width="30%" />
+<img src="screenshots/sc10.png" alt="Gallery Image" width="30%" />
 <img src="screenshots/sc7.png" alt="Gallery Image" width="30%" />
 <img src="screenshots/sc8.png" alt="Gallery Image" width="30%" />
 <img src="screenshots/sc9.png" alt="Gallery Image" width="30%" />
@@ -50,6 +51,7 @@
 - [王叔不秃Flutter教程](https://www.bilibili.com/video/BV1dt4y117J9/?spm_id_from=333.788&vd_source=009060b038d734b4de0f2c3ccf982d98) 需要有点基础看,应该是b站最好的flutter教学。
 - [Flutter GetX使用---简洁的魅力！](https://juejin.cn/post/6924104248275763208)
 - [Flutter之GetX依赖注入Bindings使用详解](https://juejin.cn/post/7062516045130498084)
+- [后台播放音频](https://github.com/ryanheise/just_audio/blob/minor/just_audio_background/example/lib/main.dart)
 ### 工具 ###
 - [脚手架 注意阅读Readme](https://github.com/xieyezi/flutter-getx-template)
 - [vscode 插件](https://marketplace.visualstudio.com/items?itemName=xieyezi.monia-getx-template) 脚手架作者写的，用于快速创建页面
