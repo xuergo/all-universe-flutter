@@ -1,14 +1,13 @@
-import 'dart:developer';
-
 import 'package:all_universe_flutter/pages/play/play_state.dart';
 import 'package:get/get.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:just_audio_background/just_audio_background.dart';
 
 class PlayController extends GetxController {
-  final PlayState state = PlayState();
-
+  late PlayState state;
   @override
-  void onInit() async {
+  void onInit() {
+    state = PlayState();
     // await Future.delayed(Duration(seconds: 10));
 
     /// 监听播放器播放进度
@@ -72,12 +71,28 @@ class PlayController extends GetxController {
         state.playViewList.indexWhere((item) => item.id == state.playData.id);
     if (index != -1) {
       state.playViewList.removeAt(index);
-      await state.playList.removeAt(index);
     }
     state.playViewList.insert(0, state.playData);
 
-    await state.playList
-        .insert(0, AudioSource.uri(Uri.parse(state.playData.url)));
+    List<AudioSource> audioSources = state.playViewList
+        .map((item) => AudioSource.uri(
+              Uri.parse(item.url),
+              tag: MediaItem(
+                id: '${item.id}',
+                album: item.title,
+                title: item.title,
+                artUri: Uri.parse(item.cover),
+              ),
+            ))
+        .toList();
+
+    state.playList = ConcatenatingAudioSource(
+      // 播放下个音频之前加载
+      useLazyPreparation: true,
+      // 定义切换算法
+      shuffleOrder: DefaultShuffleOrder(),
+      children: audioSources,
+    );
 
     await state.player.setAudioSource(state.playList,
         initialIndex: 0, initialPosition: Duration.zero);
@@ -122,7 +137,7 @@ class PlayController extends GetxController {
     state.playViewList.insert(newIndex, item);
 
     /// 播放列表
-    state.playList.removeAt(oldIndex);
-    state.playList.insert(0, AudioSource.uri(Uri.parse(item.url)));
+    state.playList.children.removeAt(oldIndex);
+    state.playList.children.insert(0, AudioSource.uri(Uri.parse(item.url)));
   }
 }
