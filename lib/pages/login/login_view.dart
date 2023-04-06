@@ -30,10 +30,13 @@ class LoginPage extends StatelessWidget {
                         Container(
                           alignment: Alignment.centerRight,
                           padding: EdgeInsets.only(right: 10.w),
-                          child: Icon(
-                            Icons.close,
-                            size: 25.w,
-                            color: AppColors.primaryGreyText,
+                          child: GestureDetector(
+                            onTap: () => Get.back(),
+                            child: Icon(
+                              Icons.close,
+                              size: 25.w,
+                              color: AppColors.primaryGreyText,
+                            ),
                           ),
                         ),
 
