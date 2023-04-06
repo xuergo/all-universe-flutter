@@ -146,6 +146,7 @@ class DetailsPage extends StatelessWidget {
           PlayBtn(
             size: 35.w,
             data: state.details,
+            isShowDataColor: true,
           ),
         ],
       ),

@@ -115,17 +115,27 @@ class PlayBtn extends StatelessWidget {
         onTap: onTap,
         child: CustomPaint(
           painter: CircleProgressBarPainter(
-            strokeWidth: 4.w,
+            strokeWidth: 3.w,
             value: data.id == state.playData?.id ? state.progressValue : 0,
-            backgroundColor: AppColors.primaryGreyBackground,
+            backgroundColor: data.id == state.playData?.id
+                ? AppColors.primaryGreyBackground
+                : Colors.transparent,
             color: AppColors.primaryColor,
           ),
-          child: Padding(
-            padding: EdgeInsets.all(6.w),
-            child: Icon(
-              icon,
-              size: size != null ? size : 28.w,
-              color: data.id == state.playData?.id ? Colors.black : color,
+          child: Container(
+            decoration: BoxDecoration(
+              color: data.id == state.playData?.id
+                  ? Colors.transparent
+                  : color.withOpacity(0.1),
+              borderRadius: BorderRadius.all(Radius.circular(100.r)),
+            ),
+            child: Padding(
+              padding: EdgeInsets.all(6.w),
+              child: Icon(
+                icon,
+                size: size != null ? size : 28.w,
+                color: data.id == state.playData?.id ? Colors.black : color,
+              ),
             ),
           ),
         ));
