@@ -52,7 +52,7 @@ dependencies:
   pull_to_refresh: ^2.0.0
 
   # webview
-  webview_flutter: ^2.0.8 
+  webview_flutter: ^4.0.7
 
   # 拍照/图片 相关
   image_picker: ^0.7.5+3

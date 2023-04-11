@@ -120,7 +120,13 @@ class PersonalPage extends StatelessWidget {
   /// 单个列表
   Widget _buildItem(data) {
     return GestureDetector(
-      onTap: () => EasyLoading.showInfo('😊尚未开发'),
+      onTap: () {
+        if (data['name'] == '退出') {
+          deleteTokenAndReLogin();
+        } else {
+          EasyLoading.showInfo('😊尚未开发');
+        }
+      },
       child: Container(
         color: Colors.white,
         child: Padding(

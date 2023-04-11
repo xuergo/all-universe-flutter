@@ -8,9 +8,10 @@ import 'package:all_universe_flutter/router/app_pages.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() => Global.init().then((e) {
-      runApp(MyApp());
-    });
+void main() async {
+  await Global.init();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override

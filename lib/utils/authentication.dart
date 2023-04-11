@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:all_universe_flutter/common/values/values.dart';
 import 'package:all_universe_flutter/global.dart';
+import 'package:all_universe_flutter/router/app_pages.dart';
 import 'package:all_universe_flutter/utils/utils.dart';
 import 'package:get/get.dart';
 
@@ -19,5 +20,5 @@ Future deleteAuthentication() async {
 /// 重新登录
 void deleteTokenAndReLogin() async {
   await deleteAuthentication();
-  Get.offAndToNamed('/login');
+  Get.offAllNamed(AppRoutes.Splash);
 }

@@ -26,7 +26,7 @@ class TaLike extends StatelessWidget {
           ),
           SizedBox(height: 20.h),
           Container(
-            height: 230.h,
+            height: 240.h,
             child: ListView.separated(
               padding: EdgeInsets.only(left: 20.w, right: 20.w),
               scrollDirection: Axis.horizontal,

@@ -1,4 +1,6 @@
 import 'package:all_universe_flutter/common/colors/colors.dart';
+import 'package:all_universe_flutter/pages/webview/browser.dart';
+import 'package:all_universe_flutter/router/app_pages.dart';
 import 'package:all_universe_flutter/utils/utils.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -45,6 +47,7 @@ class SplashPage extends StatelessWidget {
 
             /// 登陆按钮
             InkWell(
+              onTap: () => Get.toNamed(AppRoutes.Login),
               child: Container(
                 width: 300.w,
                 height: 60.h,
@@ -77,42 +80,50 @@ class SplashPage extends StatelessWidget {
 
             /// 协议
             Container(
-              width: 250.w,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Icon(
-                    Icons.check_box,
-                    color: AppColors.primaryColor,
-                  ),
-                  Expanded(
-                    child: RichText(
-                      textAlign: TextAlign.center,
-                      text: TextSpan(
-                        style: _textStyle,
-                        children: [
-                          TextSpan(text: '我已阅读井同意'),
-                          TextSpan(
-                            text: '《用户协议》',
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = () {
-                                print('---');
-                              },
-                          ),
-                          TextSpan(text: '和'),
-                          TextSpan(
-                            text: '《隐私政策》',
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = () {
-                                print('---');
-                              },
-                          ),
-                        ],
+              width: 200.w,
+              child: Expanded(
+                child: RichText(
+                  textAlign: TextAlign.center,
+                  text: TextSpan(
+                    style: _textStyle,
+                    children: [
+                      WidgetSpan(
+                        alignment: PlaceholderAlignment.middle,
+                        child: Icon(
+                          Icons.check_box,
+                          color: AppColors.primaryColor,
+                        ),
                       ),
-                    ),
+                      TextSpan(text: ' 我已阅读井同意'),
+                      TextSpan(
+                        text: '《用户协议》',
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            //若是链接跳转到webview
+                            Get.to(
+                              () => Browser(
+                                  key: ValueKey("BiliBrowser:"),
+                                  url: 'https://www.baidu.com/duty/',
+                                  title: '用户协议'),
+                            );
+                          },
+                      ),
+                      TextSpan(text: '和'),
+                      TextSpan(
+                        text: '《隐私政策》',
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            Get.to(
+                              () => Browser(
+                                  key: ValueKey("BiliBrowser:"),
+                                  url: 'https://www.baidu.com/duty/',
+                                  title: '隐私政策'),
+                            );
+                          },
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
             ),
             SizedBox(height: 20.h),
@@ -123,7 +134,7 @@ class SplashPage extends StatelessWidget {
               children: [
                 _buildOther(
                   icon: Icons.phone_android_sharp,
-                  tap: () => {Get.toNamed('/login')},
+                  tap: () => Get.offAllNamed(AppRoutes.Login),
                 ),
                 SizedBox(width: 20.w),
                 _buildOther(icon: Icons.apple, tap: () => {}),

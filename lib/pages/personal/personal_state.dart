@@ -36,6 +36,10 @@ class PersonalState {
       'name': '设置',
       'icon': Icons.settings,
     },
+    {
+      'name': '退出',
+      'icon': Icons.outlet_sharp,
+    },
   ];
 
   /// 显示子拖动前的头像

@@ -3,7 +3,6 @@ import 'package:all_universe_flutter/model/user.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:all_universe_flutter/common/values/values.dart';
-import 'package:all_universe_flutter/utils/local_storage.dart';
 import 'package:all_universe_flutter/utils/utils.dart';
 import 'package:just_audio_background/just_audio_background.dart';
 
