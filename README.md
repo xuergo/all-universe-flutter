@@ -46,6 +46,7 @@
 
 - [Flutter 官网](https://flutter.cn) 英语好的，看官方最好。
 - [老孟 Flutter](http://www.laomengit.com/)  英语不好，可以看这个 主要快速查询方便。
+- [Flutter实战·第二版](https://book.flutterchina.club/chapter6/tabview.html#_6-9-1-tabbarview)  英语不好，可以看这个 主要快速查询方便。
 - [👍👍👍FlutterUnit](https://github.com/toly1994328/FlutterUnit)  flutter组件效果预览App 主页有下载地址，非常推荐初学者安装，没事打开滑一滑。
 
 - [王叔不秃Flutter教程](https://www.bilibili.com/video/BV1dt4y117J9/?spm_id_from=333.788&vd_source=009060b038d734b4de0f2c3ccf982d98) 需要有点基础看,应该是b站最好的flutter教学。
