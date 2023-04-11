@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'dart:developer';
 
+import 'package:all_universe_flutter/global.dart';
+import 'package:all_universe_flutter/model/user.dart';
 import 'package:all_universe_flutter/pages/login/login_state.dart';
 import 'package:all_universe_flutter/router/app_pages.dart';
 import 'package:all_universe_flutter/services/services.dart';
@@ -87,10 +89,11 @@ class LoginController extends GetxController {
         "passWord": state.codeController.text,
       };
       EasyLoading.show(status: 'loading...');
-      await UserAPI.login(params: data);
+      final UserInfo userInfo = await UserAPI.login(params: data);
+      Global.saveProfile(userInfo);
       state.timer?.cancel();
       EasyLoading.dismiss();
-      Get.toNamed(AppRoutes.Tabbar);
+      Get.offAllNamed(AppRoutes.Tabbar);
     } catch (e) {
       log('$e');
     }
