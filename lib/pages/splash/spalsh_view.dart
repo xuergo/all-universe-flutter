@@ -81,48 +81,46 @@ class SplashPage extends StatelessWidget {
             /// 协议
             Container(
               width: 200.w,
-              child: Expanded(
-                child: RichText(
-                  textAlign: TextAlign.center,
-                  text: TextSpan(
-                    style: _textStyle,
-                    children: [
-                      WidgetSpan(
-                        alignment: PlaceholderAlignment.middle,
-                        child: Icon(
-                          Icons.check_box,
-                          color: AppColors.primaryColor,
-                        ),
+              child: RichText(
+                textAlign: TextAlign.center,
+                text: TextSpan(
+                  style: _textStyle,
+                  children: [
+                    WidgetSpan(
+                      alignment: PlaceholderAlignment.middle,
+                      child: Icon(
+                        Icons.check_box,
+                        color: AppColors.primaryColor,
                       ),
-                      TextSpan(text: ' 我已阅读井同意'),
-                      TextSpan(
-                        text: '《用户协议》',
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                            //若是链接跳转到webview
-                            Get.to(
-                              () => Browser(
-                                  key: ValueKey("BiliBrowser:"),
-                                  url: 'https://www.baidu.com/duty/',
-                                  title: '用户协议'),
-                            );
-                          },
-                      ),
-                      TextSpan(text: '和'),
-                      TextSpan(
-                        text: '《隐私政策》',
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                            Get.to(
-                              () => Browser(
-                                  key: ValueKey("BiliBrowser:"),
-                                  url: 'https://www.baidu.com/duty/',
-                                  title: '隐私政策'),
-                            );
-                          },
-                      ),
-                    ],
-                  ),
+                    ),
+                    TextSpan(text: ' 我已阅读井同意'),
+                    TextSpan(
+                      text: '《用户协议》',
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          //若是链接跳转到webview
+                          Get.to(
+                            () => Browser(
+                                key: ValueKey("BiliBrowser:"),
+                                url: 'https://www.baidu.com/duty/',
+                                title: '用户协议'),
+                          );
+                        },
+                    ),
+                    TextSpan(text: '和'),
+                    TextSpan(
+                      text: '《隐私政策》',
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          Get.to(
+                            () => Browser(
+                                key: ValueKey("BiliBrowser:"),
+                                url: 'https://www.baidu.com/duty/',
+                                title: '隐私政策'),
+                          );
+                        },
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -134,7 +132,7 @@ class SplashPage extends StatelessWidget {
               children: [
                 _buildOther(
                   icon: Icons.phone_android_sharp,
-                  tap: () => Get.offAllNamed(AppRoutes.Login),
+                  tap: () => Get.toNamed(AppRoutes.Login),
                 ),
                 SizedBox(width: 20.w),
                 _buildOther(icon: Icons.apple, tap: () => {}),
