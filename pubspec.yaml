@@ -72,6 +72,7 @@ dependencies:
   vibration: ^1.7.6
   
 dev_dependencies:
+  #logo生成 flutter pub run flutter_launcher_icons
   flutter_launcher_icons: ^0.13.0
   flutter_test:
     sdk: flutter
