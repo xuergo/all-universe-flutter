@@ -13,7 +13,7 @@ class TestScreen extends StatelessWidget {
       child: Text(
         '$title\nWaitting to implement!\nExpect it!',
         textAlign: TextAlign.center,
-        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+        style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 30),
       ),
     );
   }

@@ -16,7 +16,7 @@ class TopTitle extends StatelessWidget {
           title,
           style: TextStyle(
             fontSize: 25.sp,
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w400,
           ),
         ),
         widget

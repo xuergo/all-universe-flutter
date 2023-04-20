@@ -71,7 +71,7 @@ class PersonalPage extends StatelessWidget {
                       Global.profile!.name!,
                       style: TextStyle(
                         color: AppColors.primaryText,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w400,
                         fontSize: 25.sp,
                       ),
                     ),
@@ -148,7 +148,7 @@ class PersonalPage extends StatelessWidget {
                       data['name'],
                       style: TextStyle(
                         color: AppColors.primaryText,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w400,
                         fontSize: 14.sp,
                       ),
                     ),

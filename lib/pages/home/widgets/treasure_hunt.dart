@@ -15,7 +15,7 @@ class TreasureHunt extends StatelessWidget {
       margin: EdgeInsets.only(top: 20.h),
       padding: EdgeInsets.all(10.w),
       child: Container(
-        height: 290.h,
+        height: 250.h,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(8.r),
@@ -40,7 +40,7 @@ class TreasureHunt extends StatelessWidget {
           children: [
             /// 标题
             _buildTitle(),
-            SizedBox(height: 5.h),
+            SizedBox(height: 12.h),
 
             /// 节目
             _buildContent()
@@ -55,12 +55,14 @@ class TreasureHunt extends StatelessWidget {
     return Container(
       padding: EdgeInsets.only(top: 15.h, left: 10.w, right: 10.w),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
             '播客寻宝',
             style: TextStyle(
-              fontSize: 24.sp,
+              fontSize: 22.sp,
               color: AppColors.primaryColor,
+              height: 1.1,
             ),
           ),
           SizedBox(width: 10.w),
@@ -96,6 +98,7 @@ class TreasureHunt extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 16.sp,
                   color: AppColors.primaryGreyText,
+                  height: 1.1,
                 ),
               ),
               SizedBox(width: 8.w),
@@ -133,14 +136,14 @@ class TreasureHunt extends StatelessWidget {
     return GestureDetector(
       onTap: () => Get.toNamed('/details', arguments: {'data': item}),
       child: Container(
-        width: 150.w,
+        width: 110.w,
         color: Colors.transparent,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              width: 140.w,
-              height: 140.w,
+              width: 110.w,
+              height: 110.w,
               clipBehavior: Clip.hardEdge,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(4.0.r)),
@@ -156,7 +159,7 @@ class TreasureHunt extends StatelessWidget {
               maxLines: 1,
               style: TextStyle(
                 color: AppColors.primaryText,
-                fontSize: 16.sp,
+                fontSize: 14.sp,
               ),
             ),
             SizedBox(height: 1.h),
@@ -166,7 +169,7 @@ class TreasureHunt extends StatelessWidget {
               maxLines: 2,
               style: TextStyle(
                 color: AppColors.primaryGreyText,
-                fontSize: 16.sp,
+                fontSize: 13.sp,
               ),
             ),
           ],

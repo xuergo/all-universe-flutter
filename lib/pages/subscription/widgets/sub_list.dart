@@ -54,7 +54,7 @@ class SubList extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: AppColors.primaryText,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w400,
                     fontSize: 15.sp,
                   ),
                 ),
@@ -125,7 +125,6 @@ class SubList extends StatelessWidget {
                     Spacer(),
                     PlayBtn(
                       data: data,
-                      size: 20.w,
                     )
                   ],
                 )

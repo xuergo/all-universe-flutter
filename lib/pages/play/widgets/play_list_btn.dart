@@ -18,14 +18,14 @@ class PlayListBtn extends StatelessWidget {
           toPlayListPage(context);
         },
         child: Container(
-          padding: EdgeInsets.all(10.w),
+          padding: EdgeInsets.all(5.w),
           child: Icon(
             Icons.line_style_rounded,
             size: 22.w,
             color: AppColors.primaryColor,
           ),
           decoration: BoxDecoration(
-            color: AppColors.primaryColor.withOpacity(0.1),
+            color: AppColors.primaryColor.withOpacity(0.08),
             borderRadius: BorderRadius.circular(100),
           ),
         ),

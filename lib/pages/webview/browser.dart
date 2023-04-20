@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'package:all_universe_flutter/common/colors/colors.dart';
+import 'package:all_universe_flutter/components/components.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -43,8 +45,13 @@ class _BrowserState extends State<Browser> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
+      appBar: MyAppBar(
+        title: Text(
+          widget.title,
+          style: TextStyle(
+            color: AppColors.primaryText,
+          ),
+        ),
         backgroundColor: Colors.white,
         leading: InkWell(
           onTap: () => Get.back(),

@@ -6,11 +6,12 @@ import 'package:get/get.dart';
 import 'package:all_universe_flutter/services/services.dart';
 
 class HomeController extends GetxController {
-  final HomeState state = HomeState();
+  late final HomeState state;
 
   @override
   void onInit() async {
-    super.onInit();
+    state = HomeState();
+    await Future.delayed(Duration(seconds: 3));
     state.scrollController.addListener(() {
       if (state.scrollController.offset > 100) {
         state.isShowAppbarText = true;
@@ -22,6 +23,7 @@ class HomeController extends GetxController {
     await initData();
     state.loading = false;
     update();
+    super.onInit();
   }
 
   @override
@@ -35,7 +37,9 @@ class HomeController extends GetxController {
   }
 
   @override
-  void onClose() {}
+  void onClose() {
+    print('close');
+  }
 
   List<PodcastModel> getRandomArrayElements(List<PodcastModel> arr, int count) {
     var shuffled = arr.sublist(0);

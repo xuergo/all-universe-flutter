@@ -24,6 +24,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('HomePage');
     return GetBuilder<HomeController>(
       builder: (_) => state.loading
           ? CustomLoading()
@@ -112,14 +113,18 @@ class HomePage extends StatelessWidget {
                     /// 结束 slog
                     SliverToBoxAdapter(
                       child: Container(
-                        height: 290.r,
-                        alignment: Alignment.center,
-                        child: Text(
-                          '- 宇宙无垠，继续探索 -',
-                          style: TextStyle(
-                            fontSize: 12.sp,
-                            color: AppColors.primaryGreyText,
-                          ),
+                        child: Column(
+                          children: [
+                            SizedBox(height: 40.h),
+                            Text(
+                              '- 宇宙无垠，继续探索 -',
+                              style: TextStyle(
+                                fontSize: 12.sp,
+                                color: AppColors.primaryGreyText,
+                              ),
+                            ),
+                            SizedBox(height: 80.h),
+                          ],
                         ),
                       ),
                     ),

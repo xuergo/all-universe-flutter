@@ -29,6 +29,7 @@ class TabbarPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('TabbarPage');
     return BaseScaffold(
       floatingActionButtonLocation: CustomFloatingActionButtonLocation(
           FloatingActionButtonLocation.centerDocked, 0, -(60 / 2).h),

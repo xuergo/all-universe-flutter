@@ -69,7 +69,7 @@ class SplashPage extends StatelessWidget {
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 20.sp,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
                   ],
@@ -101,9 +101,10 @@ class SplashPage extends StatelessWidget {
                           //若是链接跳转到webview
                           Get.to(
                             () => Browser(
-                                key: ValueKey("BiliBrowser:"),
-                                url: 'https://www.baidu.com/duty/',
-                                title: '用户协议'),
+                              key: ValueKey("BiliBrowser:"),
+                              url: 'https://www.baidu.com/duty/',
+                              title: '用户协议',
+                            ),
                           );
                         },
                     ),
@@ -114,9 +115,10 @@ class SplashPage extends StatelessWidget {
                         ..onTap = () {
                           Get.to(
                             () => Browser(
-                                key: ValueKey("BiliBrowser:"),
-                                url: 'https://www.baidu.com/duty/',
-                                title: '隐私政策'),
+                              key: ValueKey("BiliBrowser:"),
+                              url: 'https://www.baidu.com/duty/',
+                              title: '隐私政策',
+                            ),
                           );
                         },
                     ),

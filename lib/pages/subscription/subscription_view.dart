@@ -85,7 +85,7 @@ class SubscriptionPage extends StatelessWidget {
                                     style: TextStyle(
                                       color: AppColors.primaryColor,
                                       fontSize: 12.sp,
-                                      fontWeight: FontWeight.bold,
+                                      fontWeight: FontWeight.w400,
                                     ),
                                   )
                                 ],
