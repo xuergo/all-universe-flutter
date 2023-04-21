@@ -29,7 +29,6 @@ class TabbarPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('TabbarPage');
     return BaseScaffold(
       floatingActionButtonLocation: CustomFloatingActionButtonLocation(
           FloatingActionButtonLocation.centerDocked, 0, -(60 / 2).h),
@@ -38,7 +37,13 @@ class TabbarPage extends StatelessWidget {
           return PlayState.playData == null ? SizedBox() : BottomPlayBarPage();
         },
       ),
-      body: Obx(() => state.screens[state.selectIndex.value]),
+      body: Obx(
+        () => IndexedStack(
+          index: state.selectIndex.value,
+          children: state.screens,
+        ),
+      ),
+      // body: Obx(() => state.screens[state.selectIndex.value]),
       bottomNavigationBar: Obx(
         () => BottomNavigationBar(
           type: BottomNavigationBarType.fixed,

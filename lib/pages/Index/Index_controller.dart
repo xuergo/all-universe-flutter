@@ -21,10 +21,10 @@ class IndexController extends GetxController {
   // 展示欢迎页，倒计时1.5秒之后进入应用
   Future startCountdownTimer() async {
     await Future.delayed(Duration(milliseconds: 1000), () {
-      if (Global.isOfflineLogin) {
+      if (Global.profile != null) {
         Get.toNamed(AppRoutes.Tabbar);
       } else {
-        Get.offAllNamed(AppRoutes.Tabbar);
+        Get.offAllNamed(AppRoutes.Login);
       }
     });
   }

@@ -9,7 +9,7 @@ import 'package:just_audio_background/just_audio_background.dart';
 /// 全局配置
 class Global {
   /// 用户配置
-  static UserInfo? profile = UserInfo(token: null);
+  static UserInfo? profile = null;
 
   /// 是否第一次打开
   static bool isFirstOpen = false;
