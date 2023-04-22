@@ -98,6 +98,7 @@ flutter:
    - lib/assets/images/player/
    - lib/assets/images/common/ 
    - lib/assets/images/home/
+   - lib/assets/images/cover/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

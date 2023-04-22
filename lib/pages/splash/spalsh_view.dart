@@ -1,4 +1,5 @@
 import 'package:all_universe_flutter/common/colors/colors.dart';
+import 'package:all_universe_flutter/pages/splash/widgets/animation_img_box.dart';
 import 'package:all_universe_flutter/pages/webview/browser.dart';
 import 'package:all_universe_flutter/router/app_pages.dart';
 import 'package:all_universe_flutter/utils/utils.dart';
@@ -12,7 +13,7 @@ class SplashPage extends StatelessWidget {
 
   final TextStyle _textStyle = TextStyle(
     color: AppColors.primaryText,
-    fontSize: 14.sp,
+    fontSize: 13.sp,
   );
   @override
   Widget build(BuildContext context) {
@@ -21,16 +22,16 @@ class SplashPage extends StatelessWidget {
         child: Column(
           children: [
             /// 图片弹出
-            Expanded(child: Container()),
+            Expanded(child: AnimationImgBox()),
 
             ///logo
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  'lib/assets/images/common/logo2.webp',
-                  width: 80.w,
-                  height: 80.w,
+                  'lib/assets/images/common/logo2.png',
+                  width: 50.w,
+                  height: 50.w,
                 ),
                 Text(
                   '大宇宙',
@@ -38,19 +39,19 @@ class SplashPage extends StatelessWidget {
                     color: Colors.black,
                     fontWeight: FontWeight.w900,
                     fontStyle: FontStyle.italic,
-                    fontSize: 40.sp,
+                    fontSize: 30.sp,
                   ),
                 )
               ],
             ),
-            SizedBox(height: 10.h),
+            SizedBox(height: 25.h),
 
             /// 登陆按钮
             InkWell(
               onTap: () => Get.toNamed(AppRoutes.Login),
               child: Container(
                 width: 300.w,
-                height: 60.h,
+                height: 45.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(3.r),
                   color: hexToColor('#87b48b'),
@@ -60,7 +61,7 @@ class SplashPage extends StatelessWidget {
                   children: [
                     Icon(
                       Icons.wechat_rounded,
-                      size: 35.w,
+                      size: 34.w,
                       color: Colors.white,
                     ),
                     SizedBox(width: 10.w),
@@ -68,7 +69,7 @@ class SplashPage extends StatelessWidget {
                       '微信登陆',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 20.sp,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w400,
                       ),
                     ),

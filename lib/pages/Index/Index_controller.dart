@@ -24,7 +24,7 @@ class IndexController extends GetxController {
       if (Global.profile != null) {
         Get.toNamed(AppRoutes.Tabbar);
       } else {
-        Get.offAllNamed(AppRoutes.Login);
+        Get.offAllNamed(AppRoutes.Splash);
       }
     });
   }
