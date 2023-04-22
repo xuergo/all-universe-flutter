@@ -26,7 +26,7 @@ class TaLike extends StatelessWidget {
           ),
           SizedBox(height: 20.h),
           Container(
-            height: 230.h,
+            height: 220.h,
             child: ListView.separated(
               padding: EdgeInsets.only(left: 20.w, right: 20.w),
               scrollDirection: Axis.horizontal,
@@ -96,7 +96,7 @@ class TaLike extends StatelessWidget {
                 Text(
                   item.time.toString(),
                   style: TextStyle(
-                    color: hexToColor(item.color).withOpacity(0.3),
+                    color: hexToColor(item.color).withOpacity(0.5),
                     fontSize: 12.sp,
                   ),
                 ),
@@ -133,8 +133,8 @@ class TaLike extends StatelessWidget {
         maxLines: 3,
         style: TextStyle(
           color: hexToColor(item.color),
-          fontSize: 18.sp,
-          fontWeight: FontWeight.bold,
+          fontSize: 14.sp,
+          fontWeight: FontWeight.w400,
         ),
       ),
     );
@@ -177,7 +177,10 @@ class TaLike extends StatelessWidget {
           ),
         ),
         SizedBox(width: 10.w),
-        PlayBtn(data: item),
+        PlayBtn(
+          data: item,
+          isShowDataColor: true,
+        ),
       ],
     );
   }

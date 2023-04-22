@@ -173,7 +173,7 @@ class PlayPage extends StatelessWidget {
           style: TextStyle(
             color: Colors.white,
             fontSize: 20.sp,
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w400,
           ),
         ),
       ),
@@ -201,7 +201,7 @@ class PlayPage extends StatelessWidget {
     TextStyle textStyle = TextStyle(
       color: Colors.white,
       fontSize: 16.sp,
-      fontWeight: FontWeight.bold,
+      fontWeight: FontWeight.w400,
     );
     return Column(
       children: [

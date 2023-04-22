@@ -53,7 +53,7 @@ class BottomPlayBarPage extends GetView<PlayController> {
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           color: AppColors.primaryText,
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w400,
                           fontSize: 14.sp,
                         ),
                       ),
@@ -63,7 +63,7 @@ class BottomPlayBarPage extends GetView<PlayController> {
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           color: AppColors.primaryGreyText,
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w400,
                           fontSize: 10.sp,
                         ),
                       ),
@@ -72,7 +72,7 @@ class BottomPlayBarPage extends GetView<PlayController> {
                 ),
                 SizedBox(width: 10.w),
                 PlayBtn(data: state.playData),
-                SizedBox(width: 10.w),
+                SizedBox(width: 20.w),
                 PlayListBtn()
               ],
             ),

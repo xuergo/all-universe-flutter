@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 class TabbarState {
   RxInt selectIndex = 0.obs;
 
-  final screens = [
+  List<Widget> screens = [
     HomePage(),
     SubscriptionPage(),
     PersonalPage(),

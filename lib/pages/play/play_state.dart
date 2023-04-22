@@ -20,6 +20,9 @@ class PlayState {
   /// 播放对象
   dynamic playData;
 
+  //进度
+  double progressValue = 0;
+
   /// 播放列表显示用
   List<dynamic> playViewList = [];
 

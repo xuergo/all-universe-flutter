@@ -30,10 +30,13 @@ class LoginPage extends StatelessWidget {
                         Container(
                           alignment: Alignment.centerRight,
                           padding: EdgeInsets.only(right: 10.w),
-                          child: Icon(
-                            Icons.close,
-                            size: 25.w,
-                            color: AppColors.primaryGreyText,
+                          child: GestureDetector(
+                            onTap: () => Get.back(),
+                            child: Icon(
+                              Icons.close,
+                              size: 25.w,
+                              color: AppColors.primaryGreyText,
+                            ),
                           ),
                         ),
 
@@ -50,7 +53,7 @@ class LoginPage extends StatelessWidget {
                                   '手机验证登陆',
                                   style: TextStyle(
                                     color: AppColors.primaryText,
-                                    fontWeight: FontWeight.bold,
+                                    fontWeight: FontWeight.w400,
                                     fontSize: 25.sp,
                                   ),
                                 ),
@@ -96,7 +99,7 @@ class LoginPage extends StatelessWidget {
           Text(
             '+86',
             style: TextStyle(
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w400,
               fontSize: 18.sp,
               color: AppColors.primaryColor,
             ),
@@ -112,7 +115,7 @@ class LoginPage extends StatelessWidget {
               style: TextStyle(
                 color: AppColors.primaryText,
                 fontSize: 18.sp,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w400,
               ),
               decoration: InputDecoration(
                 border: OutlineInputBorder(borderSide: BorderSide.none),
@@ -152,7 +155,7 @@ class LoginPage extends StatelessWidget {
               style: TextStyle(
                 color: AppColors.primaryText,
                 fontSize: 18.sp,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w400,
               ),
               decoration: InputDecoration(
                 border: OutlineInputBorder(borderSide: BorderSide.none),
@@ -171,7 +174,7 @@ class LoginPage extends StatelessWidget {
             child: Text(
               '${state.verifyStr}',
               style: TextStyle(
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w400,
                 fontSize: 15.sp,
                 color: state.codeEnable
                     ? AppColors.primaryColor

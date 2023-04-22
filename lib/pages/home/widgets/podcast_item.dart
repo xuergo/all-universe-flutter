@@ -44,9 +44,9 @@ class PodcastItem extends StatelessWidget {
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
-                      fontSize: 15.sp,
+                      fontSize: 14.sp,
                       color: AppColors.primaryText,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
                   Text(

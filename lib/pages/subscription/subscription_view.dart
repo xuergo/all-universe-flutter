@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:all_universe_flutter/common/colors/colors.dart';
 import 'package:all_universe_flutter/components/custom_appbar.dart';
 import 'package:all_universe_flutter/components/custom_loading.dart';
@@ -18,6 +20,7 @@ class SubscriptionPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("SubscriptionPage");
     return GetBuilder<SubscriptionController>(
       builder: (_) => state.loading
           ? CustomLoading()
@@ -85,7 +88,7 @@ class SubscriptionPage extends StatelessWidget {
                                     style: TextStyle(
                                       color: AppColors.primaryColor,
                                       fontSize: 12.sp,
-                                      fontWeight: FontWeight.bold,
+                                      fontWeight: FontWeight.w400,
                                     ),
                                   )
                                 ],

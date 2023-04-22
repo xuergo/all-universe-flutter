@@ -7,16 +7,11 @@ import 'package:all_universe_flutter/pages/Index/index_binding.dart';
 import 'package:all_universe_flutter/router/app_pages.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:just_audio_background/just_audio_background.dart';
 
-void main() => Global.init().then((e) async {
-      await JustAudioBackground.init(
-        androidNotificationChannelId: 'com.ryanheise.bg_demo.channel.audio',
-        androidNotificationChannelName: 'Audio playback',
-        androidNotificationOngoing: true,
-      );
-      runApp(MyApp());
-    });
+void main() async {
+  await Global.init();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override

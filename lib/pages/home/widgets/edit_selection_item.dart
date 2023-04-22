@@ -38,6 +38,7 @@ class EditSelectionItem extends StatelessWidget {
               child: Column(
                 children: [
                   _nameAndPlayer(),
+                  SizedBox(height: 10.h),
                   _desc(),
                   SizedBox(height: 10.h),
                   _bottomData(),

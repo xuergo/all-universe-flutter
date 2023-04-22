@@ -180,7 +180,7 @@ class Hot extends StatelessWidget {
                 style: TextStyle(
                   color: AppColors.primaryGreyText,
                   fontSize: 16.sp,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w400,
                 ),
               ),
             ),
@@ -197,7 +197,7 @@ class Hot extends StatelessWidget {
                     style: TextStyle(
                       color: AppColors.primaryText,
                       fontSize: 15.sp,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
                   SizedBox(height: 5.h),

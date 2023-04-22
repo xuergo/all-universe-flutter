@@ -24,8 +24,8 @@ class PlayController extends GetxController {
             '${remainingDuration.inHours.toString().padLeft(2, '0')}:${remainingDuration.inMinutes.toString().padLeft(2, '0')}:${(remainingDuration.inSeconds % 60).toString().padLeft(2, '0')}';
 
         /// 进度条位置
-        double progressValue = position.inSeconds * state.timeGini;
-        state.progressController.updateProgressValue(progressValue);
+        state.progressValue = position.inSeconds * state.timeGini;
+        state.progressController.updateProgressValue(state.progressValue);
 
         /// 总时长
         final totalDuration = Duration(seconds: duration.inSeconds);
@@ -57,6 +57,8 @@ class PlayController extends GetxController {
 
   /// 播放
   void play(data) async {
+    state.progressValue = 0;
+
     /// 继续播放
     if (state.playData != null && data.id == state.playData?.id) {
       state.player.play();

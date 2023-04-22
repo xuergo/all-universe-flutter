@@ -138,7 +138,7 @@ class DetailsPage extends StatelessWidget {
               softWrap: true,
               style: TextStyle(
                 fontSize: 20.sp,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w400,
               ),
             ),
           ),
@@ -146,6 +146,7 @@ class DetailsPage extends StatelessWidget {
           PlayBtn(
             size: 35.w,
             data: state.details,
+            isShowDataColor: true,
           ),
         ],
       ),
@@ -162,7 +163,7 @@ class DetailsPage extends StatelessWidget {
             style: TextStyle(
               color: hexToColor(state.details!.color),
               fontSize: 14.sp,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w400,
             ),
           ),
           Icon(

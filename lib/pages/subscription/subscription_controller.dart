@@ -18,6 +18,7 @@ class SubscriptionController extends GetxController {
 
     await initData();
     state.loading = false;
+    update();
     super.onInit();
   }
 

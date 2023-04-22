@@ -38,5 +38,7 @@ class HomeState {
   ];
 
   ScrollController scrollController = ScrollController();
-  HomeState() {}
+  HomeState() {
+    // print('----');
+  }
 }

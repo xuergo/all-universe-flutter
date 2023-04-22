@@ -64,7 +64,7 @@ class PlayListPage extends StatelessWidget {
             '播放列表',
             style: TextStyle(
               color: AppColors.primaryText,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w400,
               fontSize: 20.sp,
             ),
           ),
@@ -147,7 +147,7 @@ class PlayListPage extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       color: AppColors.primaryText,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w400,
                       fontSize: 16.sp,
                     ),
                   ),

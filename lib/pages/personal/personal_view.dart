@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:all_universe_flutter/common/colors/colors.dart';
 import 'package:all_universe_flutter/components/cahenetwork_image.dart';
+import 'package:all_universe_flutter/global.dart';
 import 'package:all_universe_flutter/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -67,10 +68,10 @@ class PersonalPage extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      '孔乙己',
+                      Global.profile!.name!,
                       style: TextStyle(
                         color: AppColors.primaryText,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w400,
                         fontSize: 25.sp,
                       ),
                     ),
@@ -119,7 +120,13 @@ class PersonalPage extends StatelessWidget {
   /// 单个列表
   Widget _buildItem(data) {
     return GestureDetector(
-      onTap: () => EasyLoading.showInfo('😊尚未开发'),
+      onTap: () {
+        if (data['name'] == '退出') {
+          deleteTokenAndReLogin();
+        } else {
+          EasyLoading.showInfo('😊尚未开发');
+        }
+      },
       child: Container(
         color: Colors.white,
         child: Padding(
@@ -141,7 +148,7 @@ class PersonalPage extends StatelessWidget {
                       data['name'],
                       style: TextStyle(
                         color: AppColors.primaryText,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w400,
                         fontSize: 14.sp,
                       ),
                     ),
@@ -159,15 +166,13 @@ class PersonalPage extends StatelessWidget {
   }
 
   /// 头像
-
   Widget _buildHeader() {
     return ClipOval(
       child: Container(
         width: 80.w,
         height: 80.w,
         child: MyCachedNetworkImage(
-          imageurl:
-              'https://i1.hdslb.com/bfs/face/2d12a6dfef7b3269c4a1095b532a0c9d0fe49888.jpg@240w_240h_1c_1s.webp',
+          imageurl: Global.profile!.img!,
         ),
       ),
     );

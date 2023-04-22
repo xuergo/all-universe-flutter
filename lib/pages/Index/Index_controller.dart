@@ -1,11 +1,10 @@
 import 'dart:developer';
 
+import 'package:all_universe_flutter/global.dart';
+import 'package:all_universe_flutter/router/app_pages.dart';
 import 'package:get/get.dart';
 
 class IndexController extends GetxController {
-  // 是否展示欢迎页
-  var isloadWelcomePage = false.obs;
-
   @override
   void onInit() {
     super.onInit();
@@ -21,8 +20,12 @@ class IndexController extends GetxController {
 
   // 展示欢迎页，倒计时1.5秒之后进入应用
   Future startCountdownTimer() async {
-    await Future.delayed(Duration(milliseconds: 1500), () {
-      isloadWelcomePage.value = false;
+    await Future.delayed(Duration(milliseconds: 1000), () {
+      if (Global.profile != null) {
+        Get.toNamed(AppRoutes.Tabbar);
+      } else {
+        Get.offAllNamed(AppRoutes.Splash);
+      }
     });
   }
 }

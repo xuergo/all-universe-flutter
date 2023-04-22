@@ -52,7 +52,7 @@ dependencies:
   pull_to_refresh: ^2.0.0
 
   # webview
-  webview_flutter: ^2.0.8 
+  webview_flutter: ^4.0.7
 
   # 拍照/图片 相关
   image_picker: ^0.7.5+3
@@ -72,6 +72,8 @@ dependencies:
   vibration: ^1.7.6
   
 dev_dependencies:
+  #logo生成 flutter pub run flutter_launcher_icons
+  flutter_launcher_icons: ^0.13.0
   flutter_test:
     sdk: flutter
 
@@ -96,6 +98,7 @@ flutter:
    - lib/assets/images/player/
    - lib/assets/images/common/ 
    - lib/assets/images/home/
+   - lib/assets/images/cover/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -122,3 +125,24 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "lib/assets/images/common/logo.png"
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "lib/assets/images/common/logo.png"
+  remove_alpha_ios: true
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "lib/assets/images/common/logo.png"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
+  windows:
+    generate: true
+    image_path: "lib/assets/images/common/logo.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "lib/assets/images/common/logo.png"

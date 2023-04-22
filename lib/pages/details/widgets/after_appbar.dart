@@ -34,7 +34,7 @@ PreferredSizeWidget AfterAppbar(details) {
             style: TextStyle(
               color: Colors.black,
               fontSize: 14.sp,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w400,
             ),
           ),
         )
